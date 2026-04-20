@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="مصنع عوافي للصناعات الغذائية في اليمن - جودة وأصالة في إنتاج الشطة، الكاتشب، والخل بأعلى المعايير العالمية."
+    />
+    <meta
+      name="keywords"
+      content="مصنع عوافي، شطة عوافي، صناعات غذائيئة اليمن، كاتشب، خل طبيعي، صنعاء"
+    />
+    <meta name="author" content="Awafi Food Factory" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta
+      property="og:title"
+      content="مصنع عوافي للصناعات الغذائية | الجودة اليمنية"
+    />
+    <meta
+      property="og:description"
+      content="مصنع عوافي للصناعات الغذائية - متخصصون في إنتاج صلصة الطماطم، الكاتشب، الشطة، والخل بأعلى الجودة. نبحث عن تجار ومندوبين."
+    />
+    <meta
+      property="og:image"
+      content="https://awafi-yem.netlify.app/assets/images/awafi_logo.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://awafi-yem.netlify.app/" />
+    <meta property="og:site_name" content="مصنع عوافي" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="مصنع عوافي للصناعات الغذائية | الجودة اليمنية"
+    />
+    <meta
+      name="twitter:description"
+      content="مصنع عوافي للصناعات الغذائية - متخصصون في إنتاج صلصة الطماطم، الكاتشب، الشطة، والخل بأعلى الجودة."
+    />
+    <meta
+      name="twitter:image"
+      content="https://awafi-yem.netlify.app/assets/images/awafi_logo.jpg"
+    />
+
+    <title>مصنع عوافي للصناعات الغذائية | الجودة اليمنية</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/awafi_icon.ico" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <style>
+      /* عدل هذا الجزء في كودك */
+      body {
+        font-family: "Cairo", sans-serif;
+        /* scroll-behavior: smooth;  <-- اِحذف هذا السطر تماماً */
+      }
+
+      /* أضف هذا السطر لضمان عدم التصاق القسم بالهيدر عند النزول */
+      /* html {
+        scroll-padding-top: 80px;
+      } */
+      /* .hero-gradient {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+          url("https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&w=1600&q=80");
+        background-size: cover;
+        background-position: center;
+      } 
+        */
+
+      .scroll-track {
+        display: flex;
+        width: max-content;
+        /* لضمان عدم وجود فجوة هوائية في النهاية */
+      }
+
+      .animate-scroll {
+        animation: scroll 20s linear infinite;
+        /* تأكد من استخدام linear ليكون التحرك انسيابياً كالحرير */
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+    </style> -->
+  </head>
+
+  <body class="bg-gray-50 overflow-x-hidden">
+    <header id="main-header"></header>
+
+    <section
+      class="relative overflow-hidden h-[100vh] justify-center text-center text-white rounded-b-[10px] shadow-2xl"
+      role="banner"
+    >
+      <picture class="absolute inset-0 -z-10">
+        <source srcset="assets/images/hero-desktop-bg.webp" type="image/webp" />
+        <img
+          src="assets/images/hero-desktop-bg.jpg"
+          alt="مصنع عوافي"
+          class="w-full h-full object-cover"
+        />
+      </picture>
+
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 -z-10"
+      ></div>
+      <div class="px-4 py-4 relative z-10">
+        <h1
+          data-aos="fade-down"
+          data-aos-duration="1200"
+          class="text-4xl md:text-7xl font-bold mb-6"
+        >
+          عوافي.. <span class="text-red-500">طعم الجودة</span>
+          <!-- <br class="hidden md:block" />في كل بيت يمني -->
+        </h1>
+
+        <p
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto opacity-95 leading-relaxed"
+        >
+          الرائدون في صناعة أجود أنواع الشطة الحارة ، الكاتشب ، الخل النقي
+        </p>
+
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="800"
+          class="flex flex-wrap justify-center gap-4"
+        >
+          <a
+            href="products.html"
+            class="bg-[#cc0000] text-white px-8 md:px-10 py-4 rounded-full font-bold text-lg hover:bg-red-800 transition shadow-xl border-2 border-[#cc0000]"
+            >استكشف منتجاتنا</a
+          >
+          <a
+            href="#trust-section"
+            class="border-2 border-white px-8 md:px-10 py-4 rounded-full font-bold text-lg text-white hover:bg-white hover:text-[#cc0000] transition-all duration-300 shadow-lg"
+          >
+            لماذا يثق بنا الملايين؟
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              رؤيتنا ورسالتنا
+            </h2>
+            <div class="w-24 h-1 bg-awafi-red mx-auto rounded-full"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <article
+              data-aos="fade-right"
+              class="relative bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-3xl border-r-4 border-awafi-red overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-awafi-red opacity-10 rounded-full -mr-16 -mt-16"
+              ></div>
+              <div class="relative z-10">
+                <div class="flex items-center mb-6">
+                  <div
+                    class="bg-awafi-red w-14 h-14 rounded-full flex items-center justify-center mr-4 shadow-lg"
+                  >
+                    <i class="fas fa-eye text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-800 mr-2">رؤيتنا</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                  أن نكون الرائدين في صناعة المنتجات الغذائية الطبيعية في اليمن
+                  والمنطقة، ونحقق رضا عملائنا من خلال تقديم منتجات عالية الجودة
+                  مستمدة من خيرات أرضنا الطيبة.
+                </p>
+              </div>
+            </article>
+
+            <article
+              data-aos="fade-left"
+              class="relative bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-3xl border-r-4 border-green-600 overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-green-600 opacity-10 rounded-full -mr-16 -mt-16"
+              ></div>
+              <div class="relative z-10">
+                <div class="flex items-center mb-6">
+                  <div
+                    class="bg-green-600 w-14 h-14 rounded-full flex items-center justify-center mr-4 shadow-lg"
+                  >
+                    <i class="fas fa-bullseye text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-800 mr-2">رسالتنا</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                  نسعى لإنتاج منتجات غذائية طبيعية 100% باستخدام أحدث التقنيات
+                  والمعايير العالمية، مع الحفاظ على التراث اليمني الأصيل وتقديم
+                  قيمة مضافة لمجتمعنا المحلي.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            ما الذي يميز منتجات عوافي؟
+          </h2>
+          <div class="w-24 h-1 bg-awafi-red mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article data-aos="fade-right">
+            <div
+              class="h-full bg-white p-8 rounded-3xl shadow-lg text-center border-b-4 border-awafi-red hover:-translate-y-2 transition-all duration-300"
+            >
+              <div
+                class="bg-red-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="fas fa-certificate text-awafi-red text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">
+                أعلى معايير الجودة
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                نطبق أدق المواصفات والمقاييس العالمية لضمان سلامة وجودة كل منتج.
+              </p>
+            </div>
+          </article>
+
+          <article data-aos="fade-up">
+            <div
+              class="h-full bg-white p-8 rounded-3xl shadow-lg text-center border-b-4 border-green-600 hover:-translate-y-2 transition-all duration-300"
+            >
+              <div
+                class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="fas fa-seedling text-green-600 text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">
+                خيرات طبيعية يمنية
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                نعتمد على أفضل المحاصيل الزراعية المحلية والمستوردة لتقديم طعم
+                طبيعي 100%.
+              </p>
+            </div>
+          </article>
+
+          <article data-aos="fade-left">
+            <div
+              class="h-full bg-white p-8 rounded-3xl shadow-lg text-center border-b-4 border-blue-600 hover:-translate-y-2 transition-all duration-300"
+            >
+              <div
+                class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="fas fa-map-marked-alt text-blue-600 text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">انتشار واسع</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                عبر أسطول توزيع ضخم، نضمن وصول منتجاتنا طازجة إلى كل مائدة في
+                الجمهورية.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="hero-products-bg py-10 relative overflow-hidden">
+        <div class="relative z-10 container mx-auto px-2"></div>
+
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div
+          class="overflow-hidden rounded-[40px] border border-white/60 bg-white shadow-2xl mx-2 md:mx-auto max-w-7xl relative"
+        >
+          <div
+            class="absolute inset-2 bg-gray-50 rounded-[35px] z-0 overflow-hidden"
+          ></div>
+
+          <div
+            class="scroll-track parent-track flex bg-transparent py-8 w-max relative z-10"
+          >
+            <div
+              class="scroll-group flex items-center gap-10 md:gap-20 animate-loop-scroll shrink-0 px-10"
+            >
+              <img
+                src="assets/images/shata.jpg"
+                alt="شطة"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+              <img
+                src="assets/images/ketchup.jpg"
+                alt="كاتشب"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+              <img
+                src="assets/images/suas.jpg"
+                alt="صلصة"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+              <img
+                src="assets/images/khal.jpg"
+                alt="خل"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+            </div>
+
+            <div
+              class="scroll-group flex items-center gap-10 md:gap-20 animate-loop-scroll shrink-0 px-10"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/shata.jpg"
+                alt="شطة"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+              <img
+                src="assets/images/ketchup.jpg"
+                alt="كاتشب"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+              <img
+                src="assets/images/suas.jpg"
+                alt="صلصة"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+              <img
+                src="assets/images/khal.jpg"
+                alt="خل"
+                class="h-32 md:h-52 w-auto object-contain shrink-0"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="trust-section" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              لماذا يثق بنا الملايين؟
+            </h2>
+            <div class="w-24 h-1 bg-awafi-red mx-auto rounded-full"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <article
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="text-center"
+            >
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition"
+              >
+                <div
+                  class="bg-awafi-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  عملاء راضون
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  أكثر من مليون عميل يثقون بمنتجاتنا يومياً هو سر نجاحنا المستمر
+                </p>
+              </div>
+            </article>
+
+            <article
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="text-center"
+            >
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition"
+              >
+                <div
+                  class="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <i class="fas fa-award text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  جوائز الجودة
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  حاصلون على أعلى الشهادات الدولية للجودة
+                </p>
+              </div>
+            </article>
+
+            <article
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="text-center"
+            >
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition"
+              >
+                <div
+                  class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <i class="fas fa-clock text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">خبرة طويلة</h3>
+                <p class="text-gray-600 text-sm">
+                  أكثر من 20 عاماً في خدمة المستهلك اليمني
+                </p>
+              </div>
+            </article>
+
+            <article
+              data-aos="fade-up"
+              data-aos-delay="400"
+              class="text-center"
+            >
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition"
+              >
+                <div
+                  class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <i class="fas fa-globe text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  انتشار واسع
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  نصل إلى كل محافظة في الجمهورية اليمنية
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="py-12 bg-gray-100 border-t border-gray-200">
+      <div class="container mx-auto px-6 text-center">
+        <p
+          class="text-gray-500 font-bold uppercase tracking-widest text-sm mb-4"
+        >
+          فخورون بخدمة المستهلك اليمني لأجيال
+        </p>
+        <div class="flex flex-wrap justify-center gap-8 opacity-40 grayscale">
+          <span class="text-xl md:text-2xl font-bold text-gray-500"
+            >AWAFI QUALITY</span
+          >
+          <span class="text-xl md:text-2xl font-bold text-gray-500"
+            >PURE FOOD</span
+          >
+          <span class="text-xl md:text-2xl font-bold text-gray-500"
+            >YEMEN MADE</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer id="main-footer"></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script>
+      // تشغيل الأنيميشن بعد التأكد من استقرار الصفحة
+      window.addEventListener("load", () => {
+        AOS.init({ duration: 800, once: true, offset: 50 });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+/* Index.html */
+
+body {
+  font-family: "Cairo", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* شريط المنتجات المتحرك */
+
+/* 1. تعريف الحركة */
+/* 1. تعريف حركة واحدة ثابتة للجميع */
+@keyframes scroll-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* 2. للحركة في وضع العربي (RTL) نعكس القيم فقط */
+@keyframes scroll-move-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* 3. تطبيق الحركة */
+.animate-loop-scroll {
+  display: flex;
+  /* الوضع الافتراضي LTR */
+  animation: scroll-move 25s linear infinite;
+  will-change: transform;
+}
+
+/* 4. الضبط الخاص بالعربي - التغيير هنا يكون في اسم الـ animation فقط */
+[dir="rtl"] .animate-loop-scroll {
+  animation-name: scroll-move-rtl;
+}
+
+/* 5. التوقف عند الحوم (Pause) */
+.parent-track:hover .animate-loop-scroll {
+  animation-play-state: paused;
+}
+
+/* 6. تحسين الموبايل: السرعة والعرض */
+@media (max-width: 768px) {
+  .animate-loop-scroll {
+    animation-duration: 15s; /* سرعة أكبر قليلاً لتناسب شاشة الموبايل */
+  }
+}
+.hero-products-bg {
+  /* نجمع الطبقة السوداء (Overlay) والخلفية في مكان واحد */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/factor.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+/* ميزة إضافية: لو أردت تغيير الخلفية في الشاشات الصغيرة لجعلها أوضح */
+@media (max-width: 768px) {
+  .hero-products-bg {
+    background-position: center; /* يمكنك ضبطها لتناسب الموبايل أكثر هنا */
+  }
+}
+
+/* product.html */
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+#main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.bg-awafi-red {
+  background-color: #cc0000;
+}
+.text-awafi-red {
+  color: #cc0000;
+}
+.family-section {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+.family-small-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.family-small-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+.family-heading {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* about.html */
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #cc0000;
+  transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+  .timeline-line::before {
+    left: 20px;
+  }
+}
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* event.html */
+
+.bento-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cc0000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.bento-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.bento-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px -12px rgba(204, 0, 0, 0.15);
+}
+
+/* تأثير لمعان على الصور */
+.img-hover-zoom {
+  overflow: hidden;
+  position: relative;
+}
+.img-hover-zoom img {
+  transition: transform 0.8s ease;
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* family.html */
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Carousel styles */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+}
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-item {
+  min-width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.indicator.active {
+  background: white;
+}
+
+/* contac.html */
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+  display: none;
+}

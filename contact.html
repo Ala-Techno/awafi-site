@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="تواصل مع مصنع عوافي للصناعات الغذائية - نبحث عن تجار ومندوبين لتوزيع منتجات صلصة الطماطم والكاتشب في جميع محافظات اليمن."
+    />
+    <meta
+      name="keywords"
+      content="مصنع عوافي، صلصة طماطم، كاتشب، شطة، تواصل، تجار، مندوبين، اليمن، صنعاء، توزيع، وكالة"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta
+      property="og:title"
+      content="تواصل معنا | مصنع عوافي للصناعات الغذائية"
+    />
+    <meta
+      property="og:description"
+      content="تواصل مع مصنع عوافي للصناعات الغذائية - نبحث عن تجار ومندوبين لتوزيع منتجات صلصة الطماطم والكاتشب في جميع محافظات اليمن."
+    />
+    <meta
+      property="og:image"
+      content="https://awafi-yem.netlify.app/assets/images/awafi_logo.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:url"
+      content="https://awafi-yem.netlify.app/contact.html"
+    />
+    <meta property="og:site_name" content="مصنع عوافي" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="تواصل معنا | مصنع عوافي للصناعات الغذائية"
+    />
+    <meta
+      name="twitter:description"
+      content="تواصل مع مصنع عوافي للصناعات الغذائية - نبحث عن تجار ومندوبين لتوزيع منتجات صلصة الطماطم والكاتشب في جميع محافظات اليمن."
+    />
+    <meta
+      name="twitter:image"
+      content="https://awafi-yem.netlify.app/assets/images/awafi_logo.jpg"
+    />
+
+    <title>تواصل معنا | مصنع عوافي للصناعات الغذائية</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/awafi_icon.ico" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 overflow-x-hidden">
+    <header id="main-header"></header>
+
+    <section class="bg-gray-950 py-20 text-center relative overflow-hidden">
+      <div
+        class="absolute inset-0 opacity-10"
+        style="
+          background-image: url(&quot;https://www.transparenttextures.com/patterns/p4.png&quot;);
+        "
+      ></div>
+
+      <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
+          يسعدنا التواصل معكم في <span class="text-[#cc0000]">عوافي</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+          نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأعلى معايير الجودة.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 container mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-12">
+        <div
+          class="md:w-1/2 bg-white p-8 rounded-3xl shadow-lg border border-gray-100 aos-init aos-animate"
+          data-aos="fade-left"
+        >
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">
+            أرسل لنا استفسارك
+          </h2>
+
+          <form id="contactForm" class="space-y-5">
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2"
+                >الاسم الكامل</label
+              >
+              <input
+                type="text"
+                id="name"
+                placeholder="اسم الشركة أو الفرد"
+                class="w-full p-3 bg-gray-50 rounded-xl outline-none border border-gray-200 focus:ring-2 focus:ring-[#cc0000] transition"
+              />
+              <span id="nameError" class="error-text"
+                >يجب أن يكون الاسم 3 أحرف على الأقل</span
+              >
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2"
+                >رقم الجوال</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                placeholder="77XXXXXXX"
+                class="w-full p-3 bg-gray-50 rounded-xl outline-none border border-gray-200 focus:ring-2 focus:ring-[#cc0000] transition"
+              />
+              <span id="phoneError" class="error-text"
+                >يرجى إدخال رقم هاتف يمني صحيح (9 أرقام)</span
+              >
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2"
+                >رسالتك أو طلبك</label
+              >
+              <textarea
+                id="message"
+                placeholder="كيف يمكننا مساعدتك؟"
+                rows="4"
+                class="w-full p-3 bg-gray-50 rounded-xl outline-none border border-gray-200 focus:ring-2 focus:ring-[#cc0000] transition"
+              ></textarea>
+              <span id="messageError" class="error-text"
+                >لا يمكن ترك خانة الرسالة فارغة</span
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-[#cc0000] text-white py-4 rounded-xl font-bold hover:bg-red-800 transition shadow-lg flex items-center justify-center gap-2"
+            >
+              <i class="fab fa-whatsapp text-xl"></i> إرسال عبر واتساب
+            </button>
+          </form>
+        </div>
+
+        <div
+          class="md:w-1/2 space-y-8 aos-init aos-animate"
+          data-aos="fade-right"
+        >
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">
+            معلومات المصنع الرسمي
+          </h2>
+          <div class="space-y-6">
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-50"
+            >
+              <div class="bg-red-50 p-3 rounded-xl text-[#cc0000]">
+                <i class="fas fa-map-marker-alt text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">العنوان</h4>
+                <p class="text-gray-600 text-sm">
+                  صنعاء - شارع مأرب - تقاطع شارع مزدا
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition"
+            >
+              <div class="bg-red-50 p-3 rounded-xl text-[#cc0000]">
+                <i class="fas fa-phone-alt text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">أرقام التواصل</h4>
+                <div
+                  class="flex flex-wrap items-center gap-3 text-gray-600 font-bold text-sm"
+                  dir="ltr"
+                >
+                  <a
+                    href="tel:777245605"
+                    class="hover:text-[#cc0000] transition"
+                    title="اتصل على الرقم 777245605"
+                    aria-label="اتصل على الرقم 777245605"
+                    >777 245 605</a
+                  >
+                  <span class="text-gray-300 font-normal">|</span>
+                  <a
+                    href="tel:777792942"
+                    class="hover:text-[#cc0000] transition"
+                    title="اتصل على الرقم 777792942"
+                    aria-label="اتصل على الرقم 777792942"
+                    >777 792 942</a
+                  >
+                  <span class="text-gray-300 font-normal">|</span>
+                  <a
+                    href="tel:774747450"
+                    class="hover:text-[#cc0000] transition"
+                    title="اتصل على الرقم 774747450"
+                    aria-label="اتصل على الرقم 774747450"
+                    >774 747 450</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full h-64 rounded-3xl overflow-hidden shadow-md border border-gray-200 mt-4"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3846.9068536109315!2d44.2088889!3d15.3813889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDIyJzUzLjAiTiA0NMKwMTInMzIuMCJF!5e0!3m2!1sen!2sye!4v1700000000000!5m2!1sen!2sye"
+              class="w-full h-full border-0"
+              title="خريطة موقع مصنع عوافي في صنعاء"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <div class="pt-6 border-t border-gray-200 text-center md:text-right">
+            <h4 class="font-bold text-gray-800 mb-4">تابعونا على:</h4>
+            <div class="flex justify-center md:justify-start gap-4">
+              <a
+                href="https://www.facebook.com/AWAFI2021/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:scale-110 transition shadow-md"
+                title="تابعنا على فيسبوك"
+                aria-label="تابعنا على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/awafi20232/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center hover:scale-110 transition shadow-md"
+                title="تابعنا على انستغرام"
+                aria-label="تابعنا على انستغرام"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://api.whatsapp.com/send?phone=967776360668"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:scale-110 transition shadow-md"
+                title="تواصل معنا عبر واتساب"
+                aria-label="تواصل معنا عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@awafi-ye.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 bg-[#cc0000] text-white rounded-full flex items-center justify-center hover:scale-110 transition shadow-md"
+                title="راسلنا عبر البريد الإلكتروني"
+                aria-label="راسلنا عبر البريد الإلكتروني"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="main-footer"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // جلب البيانات
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // جلب عناصر الخطأ
+        const nameErr = document.getElementById("nameError");
+        const phoneErr = document.getElementById("phoneError");
+        const msgErr = document.getElementById("messageError");
+
+        // تصغير كل الأخطاء أولاً
+        [nameErr, phoneErr, msgErr].forEach(
+          (el) => (el.style.display = "none"),
+        );
+
+        let isValid = true;
+
+        // التحقق من الاسم (فراغ أو أقل من 3)
+        if (name === "" || name.length < 3) {
+          nameErr.style.display = "block";
+          isValid = false;
+        }
+
+        // التحقق من الهاتف (يمني 9 أرقام)
+        const phoneRegex = /^(77|78|73|71|70)\d{7}$/;
+        if (!phoneRegex.test(phone)) {
+          phoneErr.style.display = "block";
+          isValid = false;
+        }
+
+        // التحقق من الرسالة
+        if (message === "") {
+          msgErr.style.display = "block";
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // إذا البيانات صحيحة، نجهز الوقت والتاريخ والرسالة
+        const now = new Date();
+        const dateStr = now.toLocaleDateString("ar-YE");
+        const timeStr = now.toLocaleTimeString("ar-YE", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+        const fullMsg =
+          `🧾 *طلب تواصل جديد - مصنع عوافي* \n` +
+          `👤 *الاسم:* ${name}\n` +
+          `📞 *الهاتف:* ${phone}\n` +
+          `📅 *التاريخ:* ${dateStr}\n` +
+          `⏰ *الوقت:* ${timeStr}\n` +
+          `✉️ *الرسالة:* ${message}`;
+
+        const myWhatsappNumber = "967776360668";
+        window.open(
+          `https://api.whatsapp.com/send?phone=${myWhatsappNumber}&text=${encodeURIComponent(fullMsg)}`,
+          "_blank",
+        );
+
+        window.location.href = "thanks.html";
+        contactForm.reset();
+      });
+      renderHero({
+        title: "يسعدنا التواصل معكم في عوافي",
+        description:
+          "نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأعلى معايير الجودة.",
+        // لا توجد صورة هنا، سيظهر النص في المنتصف وبشكل فخم
+      });
+    </script>
+  </body>
+</html>
