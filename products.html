@@ -68,32 +68,52 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-50">
+    <!-- Site Header -->
     <header id="main-header"></header>
 
-    <section class="bg-gray-950 py-20 flex items-center min-h-[500px]">
-      <div
-        class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
-        id="hero-content"
-      ></div>
-    </section>
-    <section class="py-16 container mx-auto px-6">
-      <div id="families-sections" class="min-h-screen"></div>
-    </section>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-gray-950 py-20 flex items-center min-h-[500px]"
+        aria-labelledby="hero-heading"
+      >
+        <div
+          class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
+          id="hero-content"
+        >
+          <h2 id="hero-heading" class="sr-only">تشكيلة عوافي الفريده</h2>
+        </div>
+      </section>
 
+      <!-- Products Section -->
+      <section
+        class="py-16 container mx-auto px-6"
+        aria-labelledby="products-heading"
+      >
+        <h2 id="products-heading">منتجات عوافي</h2>
+        <div id="families-sections" class="min-h-screen"></div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
     <footer id="main-footer"></footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/components.js"></script>
     <script src="assets/js/products-data.js"></script>
     <script src="assets/js/products.js"></script>
+    <!-- Scripts -->
     <script>
+      // Initialize AOS animations
       window.addEventListener("load", () => {
         AOS.init();
       });
     </script>
     <script>
+      // Initialize products page with dynamic content
       document.addEventListener("DOMContentLoaded", () => {
-        // إرسال "أوردر" خاص لتغيير الهيرو
+        // Send custom order to change hero section
         initProductsPage({
           // وضعنا العنوان داخل span أبيض كما طلبت
           title: "<span class='text-white'>تشكيلة عوافي الفريده</span>",
@@ -105,9 +125,9 @@
           image: "assets/images/vinegar-hero.jpg",
 
           // يمكنك تغيير الزر أو تركه كما هو
-          extraHTML: `<a href="#families-sections" class="inline-flex  mt-10 items-center gap-3 bg-[#cc0000] hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-red-900/20 group">
+          extraHTML: `<a href="#families-sections" class="inline-flex  mt-10 items-center gap-3 bg-[#cc0000] hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-red-900/20 group" aria-label="انتقل لمعرض منتجات عوافي">
             <span>استكشف منتجاتنا</span>
-            <i class="fas fa-chevron-down animate-bounce group-hover:translate-y-1 transition-transform"></i>
+            <i class="fas fa-chevron-down animate-bounce group-hover:translate-y-1 transition-transform" aria-label="أيقونة سهم للأسفل"></i>
           </a>`,
         });
       });
