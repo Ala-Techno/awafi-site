@@ -68,63 +68,84 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-50 overflow-x-hidden">
+    <!-- Site Header -->
     <header id="main-header"></header>
 
-    <section class="py-12 bg-gray-900 text-white" id="family-hero">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-8">
-          <h1 class="text-4xl font-bold mb-4" id="family-title">
-            جاري تحميل العائلة...
-          </h1>
-          <p
-            class="text-gray-300 max-w-2xl mx-auto"
-            id="family-description"
-          ></p>
-        </div>
-        <div class="carousel" id="family-carousel">
-          <div class="carousel-inner" id="carousel-inner">
-            <!-- سيتم ملؤها ديناميكياً -->
-          </div>
-          <div class="carousel-controls">
-            <button
-              class="carousel-btn"
-              id="prev-btn"
-              title="الصورة السابقة"
-              aria-label="الصورة السابقة"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </button>
-            <button
-              class="carousel-btn"
-              id="next-btn"
-              title="الصورة التالية"
-              aria-label="الصورة التالية"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-          </div>
-          <div class="carousel-indicators" id="carousel-indicators">
-            <!-- سيتم ملؤها ديناميكياً -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="py-16 container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">أصناف العائلة</h2>
-        <div class="w-24 h-1 bg-[#cc0000] mx-auto rounded-full"></div>
-      </div>
-
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        id="products-grid"
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="py-12 bg-gray-900 text-white"
+        id="family-hero"
+        aria-label="section hero family products"
       >
-        <!-- سيتم ملؤها ديناميكياً -->
-      </div>
-    </section>
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-4" id="family-title">
+              جاري تحميل العائلة...
+            </h1>
+            <p
+              class="text-gray-300 max-w-2xl mx-auto"
+              id="family-description"
+            ></p>
+          </div>
+          <div class="carousel" id="family-carousel">
+            <div class="carousel-inner" id="carousel-inner">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+            <div class="carousel-controls">
+              <button
+                class="carousel-btn"
+                id="prev-btn"
+                title="الصورة السابقة"
+                aria-label="الصورة السابقة"
+              >
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </button>
+              <button
+                class="carousel-btn"
+                id="next-btn"
+                title="الصورة التالية"
+                aria-label="الصورة التالية"
+              >
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators" id="carousel-indicators">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- Products Section -->
+      <section
+        class="py-16 container mx-auto px-6"
+        aria-labelledby="products-heading"
+      >
+        <div class="text-center mb-12">
+          <h2
+            id="products-heading"
+            class="text-3xl font-bold text-gray-800 mb-4"
+          >
+            أصناف العائلة
+          </h2>
+          <div
+            class="w-24 h-1 bg-[#cc0000] mx-auto rounded-full"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="products-grid"
+        >
+          <!-- سيتم ملؤها ديناميكياً -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
     <footer id="main-footer"></footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
