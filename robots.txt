@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://awafi-yem.netlify.app/sitemap.xml
+
+# Allow all important files
+Allow: /index.html
+Allow: /products.html
+Allow: /about.html
+Allow: /events.html
+Allow: /contact.html
+Allow: /family.html
+Allow: /thanks.html
+
+# Allow assets
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Block unnecessary files
+Disallow: /*.tmp
+Disallow: /*.bak
+Disallow: /*.log
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /PRODUCTION_SETUP_REPORT.md
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1

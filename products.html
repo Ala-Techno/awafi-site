@@ -67,30 +67,28 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-50">
+  <body class="bg-gray-50 overflow-x-hidden">
     <!-- Site Header -->
     <header id="main-header"></header>
 
     <!-- Main Content -->
     <main>
       <!-- Hero Section -->
+
       <section
-        class="bg-gray-950 py-20 flex items-center min-h-[500px]"
+        class="bg-gray-950 py-10 flex items-center min-h-[500px]"
         aria-label="section hero products showcase"
       >
-        <div
-          class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
-          id="hero-content"
-        >
+        <div class="container mx-auto px-6">
+          <div
+            class="flex flex-col md:flex-row items-center gap-12"
+            id="hero-content"
+          ></div>
         </div>
       </section>
 
       <!-- Products Section -->
-      <section
-        class="py-16 container mx-auto px-6"
-        aria-labelledby="products-heading"
-      >
-        <h2 id="products-heading">منتجات عوافي</h2>
+      <section class="py-16 container mx-auto px-6" aria-label="منتجات عوافي ">
         <div id="families-sections" class="min-h-screen"></div>
       </section>
     </main>
@@ -110,24 +108,21 @@
       });
     </script>
     <script>
-      // Initialize products page with dynamic content
       document.addEventListener("DOMContentLoaded", () => {
-        // Send custom order to change hero section
         initProductsPage({
-          // وضعنا العنوان داخل span أبيض كما طلبت
-          title: "<span class='text-white'>تشكيلة عوافي الفريده</span>",
+          // تطبيق المعيار الجديد: نص أبيض وكلمة عوافي حمراء
+          title: `<span class="text-white leading-relaxed">تشكيلة <span style="color:#cc0000">عوافي</span> الفريدة</span>`,
 
           description:
-            "نقدم لكم أجود أنواع الشطة والكاتشب والخل المصنوعة بعناية لتناسب ذوقكم الرفيع.",
+            "نقدم لكم أجود أنواع الشطة والكاتشب والخل المصنوعة بعناية لتناسب ذوقكم الرفيع، بجودة تليق بكل مائدة يمنية.",
 
-          // إذا أردت تصميم بدون صورة (نص في المنتصف)، اتركها فارغة ""
-          image: "assets/images/vinegar-hero.jpg",
+          image: "assets/images/factor.jpg",
 
-          // يمكنك تغيير الزر أو تركه كما هو
-          extraHTML: `<a href="#families-sections" class="inline-flex  mt-10 items-center gap-3 bg-[#cc0000] hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-red-900/20 group" aria-label="انتقل لمعرض منتجات عوافي">
-            <span>استكشف منتجاتنا</span>
-            <i class="fas fa-chevron-down animate-bounce group-hover:translate-y-1 transition-transform" aria-label="أيقونة سهم للأسفل"></i>
-          </a>`,
+          extraHTML: `
+        <a href="#families-sections" class="inline-flex mt-10 items-center gap-3 bg-[#cc0000] hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg group">
+          <span>استكشف منتجاتنا</span>
+          <i class="fas fa-chevron-down animate-bounce group-hover:translate-y-1 transition-transform"></i>
+        </a>`,
         });
       });
     </script>

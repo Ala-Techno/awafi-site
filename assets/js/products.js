@@ -71,29 +71,37 @@ const FamilySection = (family) => `
 `;
 
 // 4. المحرك الرئيسي لتشغيل الصفحة
-function initProductsPage(customConfig = null) {
-  // 1. تعريف دالة الرسم (داخلية) - ركز هنا
+function initProductsPage(customConfig = {}) {
+  // 1. الإعدادات
+  const defaultConfig = {
+    title: "مصنع عوافي",
+    description: "جودة تستحق الثقة",
+    image: null,
+    extraHTML: null,
+  };
+
+  const finalConfig = { ...defaultConfig, ...customConfig };
+
+  // 2. دالة الرسم (المنطق الداخلي)
   function renderHero(config) {
     const container = document.getElementById("hero-content");
     if (!container) return;
 
-    const formattedTitle = config.title.replace(
-      /عوافي/g,
-      '<span class="text-[#cc0000]">عوافي</span>',
-    );
+    const displayTitle = config.title || "";
+    const hasImage = config.image && config.image.trim() !== "";
 
-    if (!config.image) {
+    if (!hasImage) {
       container.innerHTML = `
         <div data-aos="fade-up" class="w-full text-center flex flex-col items-center justify-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-[1.4] ">${formattedTitle}</h1>
-          <p class="text-gray-400 text-lg leading-[1.8] max-w-2xl">${config.description}</p>
+        <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-snug md:leading-normal">${displayTitle}</h1>
+          <p class="text-gray-400 text-lg leading-[1.8] max-w-2xl">${config.description || ""}</p>
           ${config.extraHTML || ""}
         </div>`;
     } else {
       container.innerHTML = `
         <div data-aos="fade-left" class="md:w-1/2 text-right">
-          <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-[1.4]">${formattedTitle}</h1>
-          <p class="text-gray-400 text-lg leading-[1.8] max-w-xl">${config.description}</p>
+         <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-snug md:leading-normal">${displayTitle}</h1>
+          <p class="text-gray-400 text-lg leading-[1.8] max-w-xl">${config.description || ""}</p>
           ${config.extraHTML || ""}
         </div>
         <div data-aos="fade-right" class="md:w-1/2 relative">
@@ -104,41 +112,13 @@ function initProductsPage(customConfig = null) {
                alt="Awafi">
         </div>`;
     }
-
-    if (window.AOS) {
-      setTimeout(() => {
-        AOS.refresh();
-      }, 100);
-    }
   }
 
-  // 2. البيانات الافتراضية
-  const defaultConfig = {
-    title:
-      "<span class='text-white leading-tight '>عوافي : تليق بالمائده اليمنية</span>",
-    description:
-      "من قلب صنعاء، انطلق مصنع عوافي ليضع معايير جديدة في الصناعات الغذائية. نحن لا نصنع مجرد مقبلات، بل نقدم طعماً يجمع بين الأصالة والجودة.",
-    image: "assets/images/products-hero.jpg",
-    extraHTML: `<div class="mt-10"><a href="#families-sections" class="bg-[#cc0000] text-white px-8 py-4 rounded-xl font-bold">استكشف منتجاتنا</a></div>`,
-  };
-
-  // 3. دمج البيانات (الممررة مع الافتراضية)
-  // الدمج الذكي: إذا أرسلت صورة "فارغة" عمداً، سيتم اعتبارها غير موجودة
-  const finalConfig = customConfig
-    ? { ...defaultConfig, ...customConfig }
-    : defaultConfig;
-
-  // إذا كان المستخدم أرسل image: "" أو لم يرسلها وأردنا إلغاء الافتراضية
-  if (customConfig && customConfig.image === "") {
-    finalConfig.image = null;
-  } else if (customConfig && customConfig.extraHTML === "") {
-    finalConfig.extraHTML = null;
-  }
-
-  // 4. تنفيذ الدالة الداخلية
+  // --- السطر الناقص الذي سأضيفه الآن ---
   renderHero(finalConfig);
+  // -------------------------------------
 
-  // 5. رسم العوائل (تكملة الكود الخاص بك)
+  // 3. رسم العوائل
   const familiesContainer = document.getElementById("families-sections");
   if (familiesContainer && typeof families !== "undefined") {
     familiesContainer.innerHTML = families
@@ -146,10 +126,20 @@ function initProductsPage(customConfig = null) {
       .join("");
   }
 
-  // 6. تهيئة الأنميشن
+  // 4. تهيئة الأنميشن وتحديثه
   if (typeof AOS !== "undefined") {
     AOS.init({ duration: 1000, once: true, offset: 100 });
+    // سطر إضافي لضمان أن AOS يرى العناصر الجديدة التي تم حقنها
+    setTimeout(() => AOS.refresh(), 200);
   }
 }
-// 5. نقطة الانطلاق الموحدة
-document.addEventListener("DOMContentLoaded", initProductsPage);
+
+document.addEventListener("DOMContentLoaded", () => {
+  // هنا يمكنك استدعاؤها فارغة لتعمل بالقيم الافتراضية
+  // أو تمرير كائن customConfig من صفحة الـ HTML مباشرة
+  if (typeof window.pageConfig !== "undefined") {
+    initProductsPage(window.pageConfig);
+  } else {
+    initProductsPage();
+  }
+});

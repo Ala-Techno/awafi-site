@@ -1,56 +1,6 @@
-// ابحث عن هذا الجزء في بداية ملف components.js واجعله هكذا:
-const style = document.createElement("style");
-style.textContent = `
-  html {
-    scroll-behavior: smooth; /* تفعيل التمرير السلس من المتصفح مباشرة */
-     scroll-padding-top: 90px; /* هذا هو السطر السحري! يحل مشكلة تغطية الهيدر للعنوان */
-  }
-
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    position: relative !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* تنسيق الهيدر الثابت */
-  #main-header {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    z-index: 9999 !important;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  body {
-    padding-top: 85px !important; /* لكي لا يختفي أول جزء من الهيرو تحت الهيدر */
-  }
-
-  @media (max-width: 768px) {
-    body { padding-top: 75px !important; }
-    html { scroll-padding-top: 80px; }
-  }
-
-  :root { --awafi-red: #cc0000; }
-  .text-awafi-red { color: var(--awafi-red) !important; }
-  .bg-awafi-red { background-color: var(--awafi-red) !important; }
-`;
-document.head.appendChild(style);
-// 2. تحديث إعدادات AOS لتعمل بسلاسة أكبر في الجوال
-if (typeof AOS !== "undefined") {
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 50,
-    disableMutationObserver: false,
-  });
-} // 1. كود النافبار (Navbar) - تأكدنا من وجود sticky top-0 للثبات
+// 1. كود النافبار (Navbar) - تأكدنا من وجود sticky top-0 للثبات
 const navbarHTML = `
-  <nav class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <img src="assets/images/awafi_logo.jpg" alt="Logo" class="h-12 md:h-14 w-auto object-contain rounded-lg border border-gray-100 p-1 shadow-sm" />
@@ -67,7 +17,7 @@ const navbarHTML = `
         <a href="contact.html" class="hover:text-[#cc0000] transition px-1">اتصل بنا</a>
       </div>
       <div class="md:hidden">
-        <button id="hamburger-btn" class="text-gray-700 focus:outline-none p-2" title="فتح القائمة" aria-label="فتح القائمة"><i class="fas fa-bars text-2xl"></i></button>
+        <button id="hamburger-btn" class="text-gray-700 focus:outline-none p-3 min-w-[44px] min-h-[44px] touch-action: manipulation" title="فتح القائمة" aria-label="فتح القائمة"><i class="fas fa-bars text-2xl"></i></button>
       </div>
       <a href="contact.html" class="hidden md:block bg-[#cc0000] text-white px-5 py-2 rounded-lg hover:bg-red-800 transition shadow-md font-bold text-sm">اطلب عرض سعر</a>
     </div>
@@ -88,25 +38,25 @@ const navbarHTML = `
 `;
 // 2. كود الفوتر (Footer)
 const footerHTML = `
-  <footer class="bg-gray-900 text-white py-8 border-t border-gray-800 mt-20"      dir="rtl">
-    <div class="container mx-auto px-20">
+  <footer class="bg-gray-900 text-white py-8 border-t border-gray-800 mt-20" dir="rtl">
+    <div class="container mx-auto px-6 md:px-20">
       <div class="flex flex-col items-center mb-8 text-center">
-        <p class="text-xl font-bold mb-2 tracking-wide">شركة عوافي للصناعات الغذائية - صنعاء</p>
+        <p class="text-lg md:text-xl font-bold mb-2 tracking-wide">شركة عوافي للصناعات الغذائية - صنعاء</p>
         <p class="text-gray-500 text-sm">الجودة التي تستحقها ثقتكم</p>
       </div>
 
-       <div class="border-t border-gray-800/50 my-6"></div>
+      <div class="border-t border-gray-800/50 my-6"></div>
 
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] md:text-xs tracking-wider">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-[10px] md:text-xs tracking-wider">
         
-        <div class="text-gray-500 order-2 md:order-1">
+        <div class="text-gray-500 order-2 md:order-1 text-center md:text-right">
           © 2026 جميع الحقوق محفوظة <span class="text-gray-400">لمصنع عوافي المحدود</span>
         </div>
 
-        <div class="flex items-center gap-2 text-gray-500 order-1 md:order-2" dir="ltr">
-          <span>Digital Engineering & Development by:</span>
+        <div class="flex flex-col md:flex-row items-center gap-2 text-gray-500 order-1 md:order-2 text-center md:text-left" dir="ltr">
+          <span class="text-center">Digital Engineering & Development by:</span>
           <a href="https://wa.me/967776360668" target="_blank" rel="noopener noreferrer"
-             class="text-white hover:text-[#cc0000] transition-all duration-300 font-bold border-b border-gray-700 hover:border-[#cc0000] pb-0.5">
+             class="text-white hover:text-[#cc0000] transition-all duration-300 font-bold border-b border-gray-700 hover:border-[#cc0000] pb-0.5 text-center">
             Ala Al-Sharai
           </a>
         </div>
@@ -116,7 +66,24 @@ const footerHTML = `
   </footer>
 `;
 
-// وظيفة لحقن المكونات في الصفحة
+const whatsappBtn = `
+  <a href="https://wa.me/967776360668" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[999] group flex items-center shadow-2xl transition-all duration-300" dir="ltr" title="تواصل معنا عبر واتساب" aria-label="تواصل معنا عبر واتساب">
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out bg-white text-gray-800 font-bold py-2 px-0 group-hover:px-4 rounded-l-full shadow-sm text-sm whitespace-nowrap">
+      تواصل معنا عبر واتساب
+    </span>
+    <div class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform active:scale-95">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 -z-10"></span>
+  </a>
+`;
+// 1. الدالة الرئيسية (المدير)
+function init() {
+  injectComponents(); // أولاً: ابنِ الهيكل
+  highlightActiveLink(); // ثانياً: لوّن الرابط
+  setupMobileMenu(); // ثالثاً: شغّل الأزرار
+}
+// 2. دالة الحقن (مهمتها وضع HTML للهيدر والفوتر)
 function injectComponents() {
   const headerTag = document.getElementById("main-header");
   const footerTag = document.getElementById("main-footer");
@@ -149,24 +116,64 @@ function injectComponents() {
   }
 }
 
+// 3. دالة التلوين (مهمتها منطقية وبصرية)
+function highlightActiveLink() {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  // ابحث فقط عن الرابط الذي يطابق الصفحة الحالية بدلاً من المرور على الكل
+  const activeLink = document.querySelector(
+    `#nav-links-container a[href="${currentPage}"]`,
+  );
+
+  if (activeLink) {
+    activeLink.classList.add(
+      "text-[#cc0000]",
+      "border-b-2",
+      "border-[#cc0000]",
+    );
+  }
+}
+
+// 4. دالة التفاعل (مهمتها الوظيفية)
+function setupMobileMenu() {
+  const btn = document.getElementById("hamburger-btn");
+  const menu = document.getElementById("mobile-menu");
+  if (btn && menu) {
+    btn.onclick = () => menu.classList.toggle("hidden");
+  }
+}
+
 // تشغيل الوظيفة عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", injectComponents);
+document.addEventListener("DOMContentLoaded", () => {
+  injectComponents();
+  highlightActiveLink();
+  setupMobileMenu();
+
+  // تهيئة AOS محسنة للعمل مع الهيدر الثابت
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 120, // زيادة الـ offset لتعويض الهيدر الثابت
+      disableMutationObserver: false,
+      delay: 0,
+      easing: "ease-out-cubic",
+      mirror: false,
+    });
+
+    // تحديث AOS بعد تحميل المكونات
+    setTimeout(() => {
+      AOS.refresh();
+    }, 200);
+  }
+
+  if (document.querySelectorAll(".counter").length > 0) {
+    scrollCounters(); // تشغيل العداد فقط لو وجد في الصفحة
+  }
+});
+// document.addEventListener("DOMContentLoaded", injectComponents);
+document.body.insertAdjacentHTML("beforeend", whatsappBtn);
 
 // كود زر الواتساب الثابت
-const whatsappBtn = `
-  <a href="https://wa.me/967776360668" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[999] group flex items-center shadow-2xl transition-all duration-300" dir="ltr" title="تواصل معنا عبر واتساب" aria-label="تواصل معنا عبر واتساب">
-    <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out bg-white text-gray-800 font-bold py-2 px-0 group-hover:px-4 rounded-l-full shadow-sm text-sm whitespace-nowrap">
-      تواصل معنا عبر واتساب
-    </span>
-    <div class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform active:scale-95">
-      <i class="fab fa-whatsapp"></i>
-    </div>
-    <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 -z-10"></span>
-  </a>
-`;
-
-// حقن الزر في الصفحة عند تحميلها
-document.body.insertAdjacentHTML("beforeend", whatsappBtn);
 
 const scrollCounters = () => {
   const counters = document.querySelectorAll(".counter");
@@ -176,13 +183,12 @@ const scrollCounters = () => {
     const updateCount = () => {
       const target = +counter.getAttribute("data-target");
       const count = +counter.innerText;
-
-      // حساب مقدار الزيادة في كل خطوة
       const inc = target / speed;
 
       if (count < target) {
         counter.innerText = Math.ceil(count + inc);
-        setTimeout(updateCount, 15); // سرعة التحديث بالملي ثانية
+        // بدلاً من setTimeout
+        requestAnimationFrame(updateCount);
       } else {
         counter.innerText = target;
       }
@@ -203,57 +209,71 @@ const scrollCounters = () => {
   });
 };
 
-// تشغيل الدالة عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", scrollCounters);
-// هذا الكود يكرر الصور تلقائياً لضمان استمرار الحركة بدون انقطاع
-// const track = document.getElementById("track");
-// if (track) {
-//   const content = track.innerHTML;
-//   // سنضيف المحتوى مرتين إضافيتين ليصبح المجموع 3 مجموعات متصلة
-//   track.innerHTML = content + content + content;
-// }
+const contactForm = document.getElementById("contactForm");
 
-// وظيفة ذكية لبناء الهيرو الموحد
-// function
-//  renderHero(config) {
-//   const container = document.getElementById("hero-content");
-//   if (!container) return;
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-//   const formattedTitle = config.title.replace(
-//     /عوافي/g,
-//     '<span class="text-[#cc0000]">عوافي</span>',
-//   );
+    // جلب البيانات
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-//   // إذا لم توجد صورة، سنجعل النص يأخذ كامل العرض ويكون في المنتصف
-//   if (!config.image) {
-//     container.innerHTML = `
-//       <div data-aos="fade-up" class="w-full text-center flex flex-col items-center justify-center">
-//         <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-[1.4] md:leading-[1.5] max-w-4xl">${formattedTitle}</h1>
-//         <p class="text-gray-400 text-lg leading-[1.8] max-w-2xl">${config.description}</p>
-//         ${config.extraHTML || ""}
-//       </div>
-//     `;
-//   } else {
-//     // التنسيق العادي (نص وصورة) إذا وجدت الصورة
-//     container.innerHTML = `
-//       <div data-aos="fade-left" class="md:w-1/2 text-right">
-//         <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-[1.4] md:leading-[1.5]">${formattedTitle}</h1>
-//         <p class="text-gray-400 text-lg leading-[1.8] max-w-xl">${config.description}</p>
-//         ${config.extraHTML || ""}
-//       </div>
-//       <div data-aos="fade-right" class="md:w-1/2 relative">
-//         <div class="absolute -inset-4 bg-red-600/10 rounded-3xl blur-3xl"></div>
-//         <img src="${config.image}"
-//              onerror="this.src='assets/images/factor.jpg'"
-//              class="relative rounded-3xl shadow-2xl border-2 border-gray-700 w-full object-cover h-[280px] md:h-[350px]"
-//              alt="Awafi">
-//       </div>
-//     `;
-//   }
+    // جلب عناصر الخطأ
+    const nameErr = document.getElementById("nameError");
+    const phoneErr = document.getElementById("phoneError");
+    const msgErr = document.getElementById("messageError");
 
-//   if (window.AOS) {
-//     setTimeout(() => {
-//       AOS.refresh();
-//     }, 100);
-//   }
-// }
+    // تصغير كل الأخطاء أولاً
+    [nameErr, phoneErr, msgErr].forEach((el) => (el.style.display = "none"));
+
+    let isValid = true;
+
+    // التحقق من الاسم (فراغ أو أقل من 3)
+    if (name === "" || name.length < 3) {
+      nameErr.style.display = "block";
+      isValid = false;
+    }
+
+    // التحقق من الهاتف (يمني 9 أرقام)
+    const phoneRegex = /^(77|78|73|71|70)\d{7}$/;
+    if (!phoneRegex.test(phone)) {
+      phoneErr.style.display = "block";
+      isValid = false;
+    }
+
+    // التحقق من الرسالة
+    if (message === "") {
+      msgErr.style.display = "block";
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // إذا البيانات صحيحة، نجهز الوقت والتاريخ والرسالة
+    const now = new Date();
+    const dateStr = now.toLocaleDateString("ar-YE");
+    const timeStr = now.toLocaleTimeString("ar-YE", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    const fullMsg =
+      `🧾 *طلب تواصل جديد - مصنع عوافي* \n` +
+      `👤 *الاسم:* ${name}\n` +
+      `📞 *الهاتف:* ${phone}\n` +
+      `📅 *التاريخ:* ${dateStr}\n` +
+      `⏰ *الوقت:* ${timeStr}\n` +
+      `✉️ *الرسالة:* ${message}`;
+
+    const myWhatsappNumber = "967776360668";
+    window.open(
+      `https://api.whatsapp.com/send?phone=${myWhatsappNumber}&text=${encodeURIComponent(fullMsg)}`,
+      "_blank",
+    );
+
+    window.location.href = "thanks.html";
+    contactForm.reset();
+  });
+}

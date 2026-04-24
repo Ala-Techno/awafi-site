@@ -73,21 +73,22 @@
     <main>
       <!-- Hero Section -->
       <section
-        class="bg-gray-950 py-20 text-center relative overflow-hidden"
-        aria-label="section hero contact us"
+        class="bg-gray-950 py-10 flex items-center min-h-[500px]"
+        aria-label="section hero contact"
       >
-        <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
-          <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
-            يسعدنا التواصل معكم في <span class="text-[#cc0000]">عوافي</span>
-          </h1>
-          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-            نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأعلى معايير الجودة.
-          </p>
+        <div class="container mx-auto px-6">
+          <div
+            class="flex flex-col md:flex-row items-center gap-12"
+            id="hero-content"
+          ></div>
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section class="py-16 container mx-auto px-6 bg-gray-50">
+      <section
+        id="contact-section"
+        class="py-16 container mx-auto px-6 bg-gray-50"
+      >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <!-- First Column (Right) - Contact Form -->
           <article
@@ -309,83 +310,28 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/components.js"></script>
+    <script src="assets/js/contact-logic.js"></script>
+    <script src="assets/js/products.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
-
-      const contactForm = document.getElementById("contactForm");
-
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // جلب البيانات
-        const name = document.getElementById("name").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        // جلب عناصر الخطأ
-        const nameErr = document.getElementById("nameError");
-        const phoneErr = document.getElementById("phoneError");
-        const msgErr = document.getElementById("messageError");
-
-        // تصغير كل الأخطاء أولاً
-        [nameErr, phoneErr, msgErr].forEach(
-          (el) => (el.style.display = "none"),
-        );
-
-        let isValid = true;
-
-        // التحقق من الاسم (فراغ أو أقل من 3)
-        if (name === "" || name.length < 3) {
-          nameErr.style.display = "block";
-          isValid = false;
-        }
-
-        // التحقق من الهاتف (يمني 9 أرقام)
-        const phoneRegex = /^(77|78|73|71|70)\d{7}$/;
-        if (!phoneRegex.test(phone)) {
-          phoneErr.style.display = "block";
-          isValid = false;
-        }
-
-        // التحقق من الرسالة
-        if (message === "") {
-          msgErr.style.display = "block";
-          isValid = false;
-        }
-
-        if (!isValid) return;
-
-        // إذا البيانات صحيحة، نجهز الوقت والتاريخ والرسالة
-        const now = new Date();
-        const dateStr = now.toLocaleDateString("ar-YE");
-        const timeStr = now.toLocaleTimeString("ar-YE", {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
-
-        const fullMsg =
-          `🧾 *طلب تواصل جديد - مصنع عوافي* \n` +
-          `👤 *الاسم:* ${name}\n` +
-          `📞 *الهاتف:* ${phone}\n` +
-          `📅 *التاريخ:* ${dateStr}\n` +
-          `⏰ *الوقت:* ${timeStr}\n` +
-          `✉️ *الرسالة:* ${message}`;
-
-        const myWhatsappNumber = "967776360668";
-        window.open(
-          `https://api.whatsapp.com/send?phone=${myWhatsappNumber}&text=${encodeURIComponent(fullMsg)}`,
-          "_blank",
-        );
-
-        window.location.href = "thanks.html";
-        contactForm.reset();
-      });
-      renderHero({
-        title: "يسعدنا التواصل معكم في عوافي",
+    </script>
+    <script>
+      // إعداد بيانات صفحة التواصل لتمريرها للمحرك الموحد
+      const pageConfig = {
+        title: `<span class="text-white">يسعدنا التواصل معكم في <span style="color:#cc0000">عوافي</span></span>`,
         description:
-          "نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأعلى معايير الجودة.",
-        // لا توجد صورة هنا، سيظهر النص في المنتصف وبشكل فخم
-      });
+          "نحن هنا للإجابة على استفساراتكم وتلبية طلباتكم بأعلى معايير الجودة. سواء كنت تاجراً أو مندوباً، بابنا مفتوح دائماً للنجاح.",
+        image: "", // اتركها فارغة إذا أردت النص في المنتصف، أو ضع رابط صورة اللوجو
+        extraHTML: `
+      <div class="mt-8 animate-pulse text-white/50 text-sm cursor-pointer hover:text-white/70 transition-colors" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth', block: 'start'})" title="انتقل لطرق التواصل" aria-label="انتقل لطرق التواصل">
+          <i class="fas fa-arrow-down ml-2"></i> استعرض طرق التواصل أدناه
+      </div>`,
+      };
+
+      // استدعاء المحرك الموحد عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", () =>
+        initProductsPage(pageConfig),
+      );
     </script>
   </body>
 </html>

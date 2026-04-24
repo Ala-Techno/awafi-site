@@ -5,6 +5,60 @@ body {
   scroll-behavior: smooth;
 }
 
+/* تفعيل التمرير السلس */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* يمنع الهيدر من تغطية العناوين عند الانتقال */
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* تنسيق الهيدر الثابت - نظام موحد */
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 85px; /* يتوافق مع ارتفاع navbar desktop */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 72px; /* ضبط دقيق لارتفاع navbar الموبايل (py-3 + h-12) */
+  }
+  html {
+    scroll-padding-top: 76px; /* يتوافق مع padding-top الموبايل */
+  }
+}
+
+:root {
+  --awafi-red: #cc0000;
+}
+
+.text-awafi-red {
+  color: var(--awafi-red);
+}
+.bg-awafi-red {
+  background-color: var(--awafi-red);
+}
+
 /* شريط المنتجات المتحرك */
 
 /* 1. تعريف الحركة */
@@ -72,11 +126,7 @@ body {
 .product-card:hover img {
   transform: scale(1.1);
 }
-#main-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+/* تم حذف التكرار - الهيدر يستخدم position: fixed من الأعلى */
 .bg-awafi-red {
   background-color: #cc0000;
 }
@@ -102,7 +152,17 @@ body {
 
 /* about.html */
 
-.timeline-line::before {
+/* Timeline متوافق مع RTL */
+[dir="rtl"] .timeline-line::before {
+  content: "";
+  position: absolute;
+  right: 50%; /* RTL: استخدام right بدلاً من left */
+  width: 2px;
+  height: 100%;
+  background: #cc0000;
+  transform: translateX(50%); /* RTL: عكس التحويل */
+}
+[dir="ltr"] .timeline-line::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -112,11 +172,18 @@ body {
   transform: translateX(-50%);
 }
 @media (max-width: 768px) {
-  .timeline-line::before {
+  [dir="rtl"] .timeline-line::before {
+    right: 20px; /* RTL: استخدام right في الموبايل */
+  }
+  [dir="ltr"] .timeline-line::before {
     left: 20px;
   }
 }
-.timeline-item {
+[dir="rtl"] .timeline-item {
+  position: relative;
+  padding-right: 40px; /* RTL: استخدام padding-right */
+}
+[dir="ltr"] .timeline-item {
   position: relative;
   padding-left: 40px;
 }
@@ -164,6 +231,7 @@ body {
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease;
+  direction: ltr; /* إجبار LTR للكاروسيل حتى في صفحات RTL */
 }
 .carousel-item {
   min-width: 100%;
@@ -184,9 +252,12 @@ body {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
   border-radius: 50%;
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 .carousel-indicators {
   position: absolute;
@@ -197,11 +268,14 @@ body {
   gap: 10px;
 }
 .indicator {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
+  min-width: 20px;
+  min-height: 20px;
+  touch-action: manipulation;
 }
 .indicator.active {
   background: white;

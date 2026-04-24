@@ -36,6 +36,7 @@
     <!-- Main Content -->
     <main>
       <!-- Hero Section -->
+
       <section
         class="bg-gray-950 py-10 flex items-center min-h-[500px]"
         aria-label="section hero about factory"
@@ -132,10 +133,6 @@
               data-aos-delay="200"
             >
               <div class="relative">
-                <div
-                  class="absolute -inset-4 border-2 border-dashed border-red-200 rounded-[2.5rem] rotate-3"
-                  aria-hidden="true"
-                ></div>
                 <img
                   src="assets/images/factor.jpg"
                   alt="مصنع عوافي للصناعات الغذائية في صنعاء"
@@ -197,7 +194,7 @@
               </article>
             </div>
 
-            <div class="space-y-8" data-aos="fade-right">
+            <div class="space-y-8 overflow-hidden" data-aos="fade-up">
               <article
                 class="bg-red-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden"
               >
@@ -661,7 +658,6 @@
         </div>
       </section>
     </main>
-    ```
 
     <!-- Site Footer -->
     <footer id="main-footer"></footer>
@@ -669,23 +665,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/components.js"></script>
     <script src="assets/js/products.js"></script>
-
-    <!-- Scripts -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Send custom order to change hero section
-        initProductsPage({
-          // You can change the button or leave it as is
-          extraHTML: `<div class="mt-8 flex flex-wrap gap-6">
+      const aboutData = {
+        title: `<span class="text-white">مصنع <span style="color:#cc0000">عوافي</span> للصناعات الغذائية</span>`,
+        description:
+          "من قلب صنعاء، انطلق مصنع عوافي ليضع معايير جديدة في الصناعات الغذائية. نحن لا نصنع مجرد مقبلات، بل نقدم طعماً يجمع بين الأصالة والجودة.",
+        image: "assets/images/about-hero.jpg",
+        extraHTML: `
+      <div class="mt-8 flex flex-wrap gap-6">
         <div class="flex items-center gap-2 text-[#cc0000] font-bold">
-          <i class="fas fa-check-circle" aria-label="أيقونة التحقق"></i> مواد طبيعية 100%
+          <i class="fas fa-check-circle"></i> مواد طبيعية 100%
         </div>
         <div class="flex items-center gap-2 text-[#cc0000] font-bold">
-          <i class="fas fa-check-circle" aria-label="أيقونة التحقق"></i> إنتاج وطني فخور
+          <i class="fas fa-check-circle"></i> إنتاج وطني فخور
         </div>
       </div>`,
-        });
-      });
+      };
+      document.addEventListener("DOMContentLoaded", () =>
+        initProductsPage(aboutData),
+      );
     </script>
   </body>
 </html>

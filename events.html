@@ -72,14 +72,17 @@
         class="bg-gray-950 py-10 flex items-center min-h-[500px]"
         aria-label="section hero events and participations"
       >
-        <div
-          class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
-          id="hero-content"
-        ></div>
+        <div class="container mx-auto px-6">
+          <div
+            class="flex flex-col md:flex-row items-center gap-12"
+            id="hero-content"
+          ></div>
+        </div>
       </section>
 
       <!-- Events Grid Section -->
       <section
+        id="events-grid"
         class="py-20 container mx-auto px-6"
         aria-label="section events grid activities and achievements"
       >
@@ -376,7 +379,7 @@
                 class="w-20 h-20 mb-4 bg-gray-50 rounded-2xl flex items-center justify-center grayscale group-hover:grayscale-0 group-hover:bg-red-50 transition-all duration-500 shadow-sm"
               >
                 <i
-                  class="fas fa-radio text-3xl text-gray-400 group-hover:text-[#cc0000]"
+                  class="fas fa-broadcast-tower text-3xl text-gray-400 group-hover:text-[#cc0000]"
                   aria-hidden="true"
                 ></i>
               </div>
@@ -417,28 +420,22 @@
     <script src="assets/js/products.js"></script>
 
     <script>
-      AOS.init({ duration: 1000, once: true });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        initProductsPage({
-          // العنوان مع تمييز "الأثر المجتمعي" باللون الأحمر
-          title: `<span class="text-white">الفعاليات <span class="text-[#cc0000]">والأثر المجتمعي</span></span>`,
-
-          // التعبير (الوصف) الذي يركز على الجانب الإنساني
-          description:
-            "قصة عوافي ليست في المنتجات فقط، بل في كل يدٍ دربناها، وكل خريجٍ دعمناه، وكل بسمة رسمناها في مشاركاتنا.",
-
-          // تأكد من وضع صورة مناسبة للفعاليات هنا أو تركها فارغة ""
-          image: "",
-
-          // الزر الإضافي (سهم النزول للأسفل مع شفافية خفيفة وأنيميشن)
-          extraHTML: `
-      <div class="mt-12 animate-bounce opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+      // نكتفي بتعريف البيانات فقط، والمحرك في ملف products.js سيتكفل بالباقي
+      const pageConfig = {
+        title: `<span class="text-white">الفعاليات <span style="color:#cc0000">والأثر المجتمعي</span></span>`,
+        description:
+          "قصة عوافي ليست في المنتجات فقط، بل في كل يدٍ دربناها، وكل خريجٍ دعمناه، وكل بسمة رسمناها في مشاركاتنا.",
+        image: "", // اتركها فارغة ليصبح التصميم في المنتصف تلقائياً
+        extraHTML: `
+      <div class="mt-12 animate-bounce opacity-40 hover:opacity-100 transition-opacity cursor-pointer" onclick="document.getElementById('events-grid').scrollIntoView({behavior: 'smooth', block: 'start'})" title="انتقل للفعاليات" aria-label="انتقل للفعاليات">
           <i class="fas fa-chevron-down text-3xl text-white"></i>
-      </div>
-    `,
-        });
-      });
+      </div>`,
+      };
+
+      // استدعاء الدالة مباشرة
+      document.addEventListener("DOMContentLoaded", () =>
+        initProductsPage(pageConfig),
+      );
     </script>
   </body>
 </html>
